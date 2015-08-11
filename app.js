@@ -46,9 +46,8 @@ if (config.env === 'production') {
  * Routes
  */
 
-// serve index and view partials
+// serve index
 app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
 
 // JSON API
 app.get('/api/day', api.wordoftheday);
