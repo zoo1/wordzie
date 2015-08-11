@@ -2,8 +2,12 @@
 
 /* Services */
 
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('myApp.services', []).
-  value('version', '0.1');
+app.factory('wordofday', ['$http', function($http) { 
+  return $http.get('/api/day') 
+            .success(function(data) { 
+              return data; 
+            }) 
+            .error(function(err) { 
+              return err; 
+            }); 
+}]);

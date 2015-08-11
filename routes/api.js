@@ -10,7 +10,7 @@ exports.lookupword = function (req, res) {
   	if(rows.length==0) wordmiss(word, res);
   	else
   	{
-  		res.json(rows[0].json);
+  		res.json(JSON.parse(rows[0].json));
   	}
 });
 
@@ -55,7 +55,7 @@ exports.wordoftheday = function (req, res) {
   		connection.query("SELECT * from words,stats where stats.value=words.word and stats.stat='wordofday'", function(err, rows, fields) {
   	if (err) throw err;
 
-  	res.json({word: rows[0].word, words: JSON.parse(rows[0].json)});
+  	res.json({word: rows[0].word, defs: JSON.parse(rows[0].json)});
   });
   		connection.end();
   	}
