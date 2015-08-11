@@ -22,9 +22,10 @@ html(lang='en')
         h3 Look up word
         input(type='text', name='search' , on-keyup-fn='handleKeypress')
         hr
-        h3 {{ lookup }}
+        h3 {{ pre }} {{ lookup }}
         .lookuparr(ng-repeat="def in lookuparr")
-          {{def.partofspeech}}
+          {{ $index+1 }}. 
+          span(name='ital') {{def.partofspeech}} 
           {{def.def}}
       .fright
     // jQuery (necessary for Bootstrap's JavaScript plugins)

@@ -20,6 +20,7 @@ app.directive('onKeyupFn', ['$http', function($http) {
                     throw data.error;
             else
             {
+                scope.pre = "";
                 scope.lookup = elm.context.value;
                 scope.lookuparr = data
             }

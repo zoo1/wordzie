@@ -33,3 +33,7 @@ input {
     border-radius: 5px;
     background-color: transparent;
 }
+
+span {
+    font-style: italic;
+}

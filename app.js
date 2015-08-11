@@ -7,8 +7,8 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
   errorHandler = require('errorhandler'),
+  cookieParser = require('cookie-parser'),
   morgan = require('morgan'),
-  routes = require('./routes'),
   api = require('./routes/api'),
   http = require('http'),
   path = require('path')
@@ -29,6 +29,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride());
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -47,15 +48,13 @@ if (config.env === 'production') {
  */
 
 // serve index
-app.get('/', routes.index);
+app.get('/', function(req, res){ res.render('index') });
 
 // JSON API
-app.get('/api/day', api.wordoftheday);
-app.get('/api/list', api.userlist);
-app.get('/api/word/:word', api.lookupword);
+app.use('/api', api);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+app.get( function(req, res){ res.render('index') });
 
 
 /**
