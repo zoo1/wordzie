@@ -53,6 +53,8 @@ app.get('/partials/:name', routes.partials);
 // JSON API
 app.get('/api/day', api.wordoftheday);
 app.get('/api/list', api.userlist);
+app.get('/api/word/:word', api.lookupword);
+
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
 
