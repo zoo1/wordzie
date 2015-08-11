@@ -17,11 +17,11 @@ connection.query("DROP TABLE words", function(err) { });
 connection.query("DROP TABLE lists", function(err) { });
 connection.query("DROP TABLE stats", function(err) { });
 
-connection.query("CREATE TABLE words (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, word VARCHAR(30) NOT NULL, definitions VARCHAR(500) NOT NULL, sentence VARCHAR(200))" 
+connection.query("CREATE TABLE words (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, word VARCHAR(30) NOT NULL, json VARCHAR(1000) NOT NULL)" 
 ,function(err) { });
 connection.query("CREATE TABLE lists ( listid INT UNSIGNED, wordid INT NOT NULL)" 
 ,function(err) { });
-connection.query("CREATE TABLE stats ( stat VARCHAR(30), value VARCHAR(30))" 
+connection.query("CREATE TABLE stats ( stat VARCHAR(30), value VARCHAR(1000))" 
 ,function(err) { });
 
 
