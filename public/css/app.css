@@ -1,0 +1,35 @@
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	overflow:auo;
+}
+
+.fleft {
+	 border-radius: 25px;
+	text-align:center;
+    float:left; 
+    width: 25%;
+    height: 100%;
+}
+
+.fright {
+	 border-radius: 25px;
+	float: right;
+    background:#003DF5;
+    height: 100%;
+    width: 75%;
+}
+
+.pad {
+	padding-top: 5%;
+}
+
+input {
+    border-radius: 5px;
+    background-color: transparent;
+}
