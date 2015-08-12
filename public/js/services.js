@@ -24,7 +24,8 @@ app.factory('wordlist', ['$http', '$rootScope', function($http, $rootScope) {
       })
     },
     saveBooks: function($params , word, def) {
-      return $http({
+    	if(words.filter(function( i){ return i.word === word}).length === 0) //word already in array
+      {return $http({
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         url: 'api/list',
         method: "POST",
@@ -32,8 +33,11 @@ app.factory('wordlist', ['$http', '$rootScope', function($http, $rootScope) {
       })
         .success(function(response) {
           if(response.success)
-          	$rootScope.$broadcast('AppendUserWords',{word : word, def : def});
+          {
+          	$rootScope.$broadcast('AppendUserWords',{word : word, defs : def});
+          }
         });
+    }
     }
   };
 }]);

@@ -9,7 +9,6 @@ app.directive('onKeyupFn', ['$http', function($http) {
         //to a function we'll call each keyup
         var keyupFn = scope.$eval(attrs.onKeyupFn);
         elm.bind('keyup', function(evt) {
-            console.log(evt);
             var word = elm.context.value;
             if(/[^\s]/.test(word) && word != scope.lookup)
             {

@@ -12,6 +12,7 @@ app.controller('MainController', ['$scope', 'wordofday', 'wordlist', function($s
 
   wordlist.getWords().then(function(data) {
     $scope.userlist = data;
+    console.log(data);
   });
  
   $scope.$on('SetUserWords', function(events, words) {
@@ -20,7 +21,7 @@ app.controller('MainController', ['$scope', 'wordofday', 'wordlist', function($s
 
   $scope.$on('AppendUserWords', function(events, word) {
     $scope.userlist.push(word);
-    console.log($scope.userlist);
+    console.log(word);
   });
  
 	//adding entry to list when 
