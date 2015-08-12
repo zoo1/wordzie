@@ -12,16 +12,6 @@ app.factory('wordofday', ['$http', function($http) {
             }); 
 }]);
 
-// app.factory('wordlist', ['$http', function($http) { 
-//   return $http.get('/api/list') 
-//             .success(function(data) { 
-//               return data; 
-//             }) 
-//             .error(function(err) { 
-//               return err; 
-//             }); 
-// }]);
-
 app.factory('wordlist', ['$http', '$rootScope', function($http, $rootScope) {
   var words = [];
  
