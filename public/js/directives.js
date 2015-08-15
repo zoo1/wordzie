@@ -25,7 +25,7 @@ app.directive('onKeyupFn', ['$http', function($http) {
                     {
                       scope.pre = "";
                       scope.lookup = word;
-                      scope.lookuparr = data
+                      scope.lookuparr = data;
                     }
                   }, function(response) {
     // called asynchronously if an error occurs

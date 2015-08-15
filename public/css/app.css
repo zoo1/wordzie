@@ -10,7 +10,7 @@ html, body, #fullheight {
 }
 
 .fleft {
-	 border-radius: 25px;
+    position: fixed;
 	text-align:center;
     float:left; 
     width: 25%;
