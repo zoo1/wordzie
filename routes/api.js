@@ -153,12 +153,18 @@ router.post('/list', function (req, res){
     var connection = myshort();
     connection.query("SELECT * from words where word ='" + word + "'", function(err, rows, fields) {
       if(rows.length === 0) //word not found in cache
+      {
         res.json({ error: "Word Does not exist"});
+        connection.end();
+      }
       else {
         var wordid =rows[0].id;
         connection.query("SELECT * from lists where listid='" + id + "' AND wordid = '" + wordid + "'", function(err, rows, fields) {
-          if(words.length != 0)
+          if(rows.length != 0)
+          {
             res.json({ error : "Word is already in the users list"});
+            connection.end();
+          }
           else
           {
             connection.query("INSERT INTO lists values ('" + id + "', '" + wordid +"')", function(err, rows, fields) {
@@ -169,7 +175,6 @@ router.post('/list', function (req, res){
         });
       }
     });
-    connection.end();
   }
 });
 
