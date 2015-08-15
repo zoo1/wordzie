@@ -18,15 +18,20 @@ html, body, #fullheight {
 }
 
 .fright {
-	 border-radius: 25px;
 	float: right;
-    background:#003DF5;
+    border-left: solid 1px #EEE;
     height: 100%;
     width: 75%;
+    display: inline-block;
+    height: auto;
 }
 
 .pad {
 	padding-top: 5%;
+}
+
+.defwrap {
+    margin-left: 20px;
 }
 
 input {
@@ -34,6 +39,11 @@ input {
     background-color: transparent;
 }
 
-span {
+span[name=ital]{
     font-style: italic;
+}
+
+span[name=word]{
+    font-weight: bold;
+    font-size: 110%;
 }
