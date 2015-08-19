@@ -15,11 +15,12 @@ html, body, #fullheight {
     float:left; 
     width: 25%;
     height: 100%;
+    border-right: solid 1px #EEE;
 }
 
 .fright {
 	float: right;
-    border-left: solid 1px #EEE;
+    border-left: solid 3px #FFF;
     height: 100%;
     width: 75%;
     display: inline-block;

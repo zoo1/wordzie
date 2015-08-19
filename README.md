@@ -1,8 +1,8 @@
 # wordzie
-A word lookup/remembering application.
+A word lookup/remembering application. Powered by Wordnik API, which does basic word definition caching.
 
 Created for introductory learning of:
 * Angular.js
 * Bootstrap
 * Jade
-![](http://s1.postimg.org/dhm7szs9a/screen.jpg)
+![](http://oi57.tinypic.com/rsemu9.jpg)
