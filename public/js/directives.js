@@ -30,6 +30,7 @@ app.directive('onKeyupFn', ['$http', function($http) {
                 }, function(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
+    elm.addClass("alert-danger");
   });
                 }
               }, 200);
